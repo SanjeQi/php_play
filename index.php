@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Php</title>
   </head>
   <body>
 
 <?php 
 
-$names = array("Fred", "Rob","Ian");
+$names = array ("Fred", "Rob","Ian");
 
 if ($_POST["submit"]) {
   if ($_POST["name"]) {
-    foreach ($names as $name) {
+   foreach ($names as $name) {
 		if ($_POST["name"] == $name) {
 			echo "I know you! Your name is".$name;
 			$knowYou = 1;
@@ -32,7 +32,8 @@ if ($_POST["submit"]) {
     <form>
       <label for="name">Name</label>
       <input name="name" type="text" />
-      <input type="submit" name="submit" value="Submit your name" />
-      <form>
+      <input type="submit" name="submit" value="Submit your name now" />
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor ipsam quos sequi vel. Vero doloribus quo quas, esse maiores cumque?</p>
+    <form>
   </body>
 </html>
