@@ -1,0 +1,27 @@
+.emailForm {
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin-top: 20px;
+  background-color: rgb(185, 186, 187);
+}
+
+form {
+  padding-bottom: 20px;
+}
+
+.form-group {
+  padding-top: 1rem;
+}
+.form-group label {
+  padding-bottom: 0.5rem;
+  margin-left: 0.4rem;
+}
+.btn {
+  margin-top: 1rem;
+}
+.para {
+  font-size: large;
+}
+.container {
+  margin: 0 auto;
+}
