@@ -1,7 +1,31 @@
 <?php
 
 if($_POST["submit"]) {
-  $result='<div class="alert alert-success"> Form submitted </div>';
+  $result='<div class="alert alert-success"> Form submitted successfully </div>';
+
+  if(!$_POST["name"]) {
+    $error ='<br/>Please enter your name';
+  }
+   if(!$_POST["email"]) {
+    $error =$error.'</br>Please enter your email address';
+  }
+   if(!$_POST['comment']) {
+    $error =$error.'</br>Please enter your comment below';
+  } 
+   if ($error){
+    $result='<div class="alert alert-danger"> <strong>There were errors(s) in your form: </strong>'.$error.' </div>';
+  }
+   else {
+    if(mail(
+      "cristi.nord@gmail.com", "Comment from website!", "Name: ".$_POST['name']."Email: ".$_POST['email']."
+      Comment: ".$_POST['comment']
+      )){
+          $result='<div class="alert alert-success"> <strong>Thank you!I will get back to you ASAP </strong>'.$error.' </div>';
+ 
+      } else {
+          $result='<div class="alert alert-danger"> <strong>Message not sent. Something went wrong. Please try again later </strong>'.$error.' </div>';
+      }
+   }
 }
 
 ?>
@@ -31,7 +55,7 @@ if($_POST["submit"]) {
           <h1>Contact</h1>
           <?php echo $result ?>
           <p class="lead para">
-            Please get in touch  I'll get back to you as soon as I can.
+            Please get in touch  I'll get back to you asap.
           </p>
           <form class="my_form" method="post">
             <div class="form-group">
@@ -56,12 +80,12 @@ if($_POST["submit"]) {
             </div>
             <div class="form-group">
               <label for="comment">Your Comment:</label>
-              <textarea class="form-control" name="comment"> </textarea>
+              <textarea type="text" class="form-control" name="comment"></textarea>
             </div>
             <input
               type="submit"
               name="submit"
-              class="btn btn-warning btn-lg"
+              class="btn btn-success btn-lg"
               value="Submit"
             />
           </form>
@@ -76,3 +100,4 @@ if($_POST["submit"]) {
     ></script>
   </body>
 </html>
+
