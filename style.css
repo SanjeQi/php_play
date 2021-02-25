@@ -1,27 +1,36 @@
-.emailForm {
-  border: 1px solid grey;
-  border-radius: 10px;
-  margin-top: 20px;
-  background-color: lightcoral;
+html,
+body {
+  height: 100%;
+}
+.container-fluid {
+  background-image: url('weather.jpg');
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  padding-top: 17rem;
 }
 
-form {
-  padding-bottom: 20px;
-}
-
-.form-group {
-  padding-top: 1rem;
-}
-.form-group label {
-  padding-bottom: 0.5rem;
-  margin-left: 0.4rem;
-}
-.btn {
-  margin-top: 1rem;
-}
-.para {
-  font-size: large;
-}
-.container {
+.col-md-6 {
+  max-width: 70%;
   margin: 0 auto;
+}
+
+.center {
+  text-align: center;
+}
+.white {
+  color: white;
+}
+p {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+button {
+  margin-top: 1.3rem;
+  margin-bottom: 1.3rem;
+}
+.alert {
+  margin-top: 1.3rem;
+  display: none;
 }
