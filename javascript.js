@@ -2,9 +2,17 @@ $('#findMyWeather').click(function (event) {
   event.preventDefault();
   if ($('#city').val() != '') {
     $.get('scraper.php?city=' + $('#city').val(), function (data) {
-      alert(data);
+      if (data == '') {
+        $('#success').fadeOut();
+        $('#fail').fadeIn();
+      } else {
+        $('#fail').fadeOut();
+        $('#success').html(data).fadeIn();
+      }
     });
   } else {
-    alert('Please enter a city');
+    $('#success').fadeOut();
+    $('#fail').fadeOut();
+    $('#noCity').fadeIn();
   }
 });
